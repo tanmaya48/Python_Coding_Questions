@@ -3,7 +3,7 @@ from checker import check_question
 import argparse
 
 
-Q_DIR = '/home/ce/sessions/code_questions/questions'
+Q_DIR = 'questions'
 diff_dirs = {name : os.path.join(Q_DIR,name) for name in os.listdir(Q_DIR)}
 
 question_diff = {}
