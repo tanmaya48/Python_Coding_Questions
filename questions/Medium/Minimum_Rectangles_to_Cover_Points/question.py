@@ -27,3 +27,17 @@ def minRectanglesToCoverPoints(points: List[List[int]], w: int) -> int:
       * `0 <= w <= 10 ^ 9`
       * All pairs `(xi, yi)` are distinct.
     """
+    xs = [p[0] for p in points]
+    xs.sort()
+    num_rects = 0
+    while True:
+        if len(xs) == 0:
+            return num_rects
+        x1 = xs[0]
+        x2 = x1 + w
+        xs = [x  for x in xs if x > x2]
+        num_rects+=1
+
+
+
+
