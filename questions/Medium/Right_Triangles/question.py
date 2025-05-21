@@ -17,3 +17,16 @@ def numberOfRightTriangles(grid: List[List[int]]) -> int:
       * `1 <= grid[i].length <= 1000`
       * `0 <= grid[i][j] <= 1`
     """
+    h = len(grid)
+    w = len(grid[0])
+    triangles = 0
+    for y in range(h):
+        for x in range(w):
+            if grid[y][x] == 0:
+                continue
+            b = sum(grid[y]) -1
+            t = sum([grid[i][x] for i in range(h)]) -1
+            triangles+= (t*b)
+    return triangles
+
+numberOfRightTriangles([[0,1],[1,1]])
