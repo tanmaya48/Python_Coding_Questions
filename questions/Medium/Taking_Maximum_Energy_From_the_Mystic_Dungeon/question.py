@@ -23,3 +23,15 @@ def maximumEnergy(energy: List[int], k: int) -> int:
       * `-1000 <= energy[i] <= 1000`
       * `1 <= k <= energy.length - 1`
     """
+    max_energy = None
+    for i in range(len(energy)):
+        collected_energy = 0
+        index = i
+        while True:
+            if index >= len(energy):
+                break
+            collected_energy += energy[index]
+            index+=k
+        if max_energy is None or collected_energy > max_energy:
+            max_energy = collected_energy 
+    return max_energy
